@@ -41,4 +41,17 @@ public class CourseServiceimpl implements CourseService {
 		}
 		return c;
 	}
+	
+	@Override
+	public Course updateCourse(Course course,long courseId) {
+		for(Course c:list) {
+			if(c.getId()==courseId) {
+				c.setId(course.getId());
+				c.setDescription(course.getDescription());
+				c.setTitle(course.getTitle());
+				return c;
+			}
+		}
+		return null;
+	}
 }
