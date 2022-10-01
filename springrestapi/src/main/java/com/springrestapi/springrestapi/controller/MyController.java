@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -39,4 +40,12 @@ public class MyController {
 		return this.courseService.addCourse(course);
 	}
 	
+	//Update Course
+	/*
+	 * Here I am giving the course id and updated value
+	 */
+	@PutMapping("/courses/{courseId}")
+	public Course updateCourse(@RequestBody Course course,@PathVariable String courseId) {
+		return this.courseService.updateCourse(course,Long.parseLong(courseId));
+	}
 }
