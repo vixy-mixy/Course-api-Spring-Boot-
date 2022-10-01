@@ -24,7 +24,11 @@ public class CourseServiceimpl implements CourseService {
 		return list;
 	}
 	
-	
+	@Override
+	public Course addCourse(Course course) {
+		list.add(course);
+		return course;
+	}
 	
 	@Override
 	public Course getCourse(long courseId) {
